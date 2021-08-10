@@ -1,31 +1,80 @@
-# Dependencies
+### Fintech Finder Application 
 
-Web3.py (https://web3py.readthedocs.io/en/stable/overview.html): A Python library for connecting to and performing operations on Ethereum-based blockchains.
+**Overview of the project and project goals**
 
-ethereum-tester (https://pypi.org/project/ethereum-tester/0.1.0a4/): A Python library that provides access to the tools we’ll use to test Ethereum-based applications.
+Fintech Finder is an application that customers can use to find fintech professionals from among a list of candidates, hire them, and pay them. This application works by integrating the Ethereum blockchain network into the application in order to enable customers to instantly pay the fintech professionals whom they hire with cryptocurrency.
 
-mnemonic (https://pypi.org/project/mnemonic/): A Python implementation for generating a 12- or 24-word mnemonic seed phrase based on the BIP-39 standard.
 
-bip44 (https://pypi.org/project/bip44/): A Python implementation for deriving hierarchical deterministic wallets from a seed phrase based on the BIP-44 standard.
+## Set Up Python Modules and Libraries
 
-Infura API: An API that provides instant access to the Ethereum network over HTTPS (i.e., the web). You will need to create an account with Infura.
-
-Set Up Python Modules and Libraries
-
-To install the Web3.py library, check that your dev environment is active, and then run the following:
-
+*To install the Web3.py library, check that your dev environment is active, and then run the following:*
+```
 pip install web3==5.17
-To install the ethereum-tester library, check that your dev environment is active, and then run the following:
+```
+* [Web3.py](https://web3py.readthedocs.io/en/stable/overview.html) - A Python library for connecting to and performing operations on Ethereum-based blockchains.
 
+*To install the ethereum-tester library, check that your dev environment is active, and then run the following:*
+```
 pip install eth-tester==0.5.0b3
-To install the mnemonic package, check that your dev environment is active, and then run the following:
+```
+* [ethereum-tester](https://pypi.org/project/ethereum-tester/0.1.0a4/) - A Python library that provides access to the tools we’ll use to test Ethereum-based applications.
 
+*To install the mnemonic package, check that your dev environment is active, and then run the following:*
+```
 pip install mnemonic
-To install the bip44 package, check that your dev environment is active, and then run the following:
+```
+* [mnemonic](https://pypi.org/project/mnemonic/) - A Python implementation for generating a 12- or 24-word mnemonic seed phrase based on the BIP-39 standard.
 
+*To install the bip44 package, check that your dev environment is active, and then run the following:*
+```
 pip install bip44
+```
 
-# Step 3: Inspect the Transaction on Etherscan
+* [bip44](https://pypi.org/project/bip44/) - A Python implementation for deriving hierarchical deterministic wallets from a seed phrase based on the BIP-44 standard.
+
+*To connect with the Ethereum network over the web, create a free account with Infura.*
+* [Infura API](https://infura.io) - An API that provides instant access to the Ethereum network over HTTPS (i.e., the web). You will need to create an account with Infura.
+
+
+## Required Dependencies 
+
+```
+import os
+import requests
+from dotenv import load_dotenv
+load_dotenv()
+from bip44 import Wallet
+from web3 import Account
+from web3.auto.infura.kovan import w3
+from web3 import middleware
+from web3.gas_strategies.time_based import medium_gas_price_strategy
+import streamlit as st
+from dataclasses import dataclass
+from typing import Any, List
+```
+
+
+## Installation
+
+1. Clone repo from GitHub to your computer:
+
+```
+git clone https://github.com/JonahLeggett/Fintech_Finder.git
+```
+
+
+## Run Streamlit
+
+1. Navigate to the 'Fintech_Finder' local repo folder in terminal.
+
+2. Run the following command in terminal:
+
+```
+streamlit run fintech_finder.py
+```
+
+
+## Instructions (With Screenshots) for Using Streamlit Application
 
 **Send a test transaction by using the application’s web interface, and then
 look up the resulting transaction hash on the Kovan Etherscan block explorer
@@ -71,3 +120,8 @@ the transaction that paid the Fintech Finder candidate.
 
  ![Step 7](Images/step_6.png) 
  ![Step 7a](Images/step_7.png)
+
+
+## License
+
+MIT
