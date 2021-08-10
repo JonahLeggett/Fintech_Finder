@@ -25,3 +25,49 @@ To install the bip44 package, check that your dev environment is active, and the
 
 pip install bip44
 
+# Step 3: Inspect the Transaction on Etherscan
+
+**Send a test transaction by using the application’s web interface, and then
+look up the resulting transaction hash on the Kovan Etherscan block explorer
+to verify the transactions.**
+
+Complete the following steps:
+
+1. From terminal, navigate to the project folder that contains
+the `.env` file and the `fintech_finder.py` and `crypto_wallet.py` files.
+
+2. To launch the Streamlit application,
+type `streamlit run fintech_finder.py`.
+
+![alt text](step_1.jpg)
+
+3. On the resulting webpage, select a candidate that the customer would like to hire
+from the appropriate drop-down menu. Then, enter the number of hours that they
+would like to hire them for. (Remember to check the balance of the account to ensure 
+you have enough to pay them.)
+
+![alt text](step_2.jpg)
+
+4. Click the Send Transaction button to sign and send the transaction with
+the Ethereum account information. If the transaction is successfully
+communicated to the Ethereum Kovan testnet, validated, and added to a block,
+a resulting transaction hash code will be written to the Streamlit
+application sidebar.
+
+![alt text](step_3.jpg)
+
+5. Copy the customer’s Ethereum address from the Streamlit application
+page, and navigate to [Kovan Etherscan](https://kovan.etherscan.io/).
+Paste the copied Ethereum address into the Kovan Etherscan search bar.
+
+![alt text](step_4.jpg)    
+
+6. To view transaction details, on the Kovan Etherscan page, click on the Txn Hash number associated with
+the transaction that paid the Fintech Finder candidate.
+
+ ![alt text](step_5.jpg)  
+
+7. View the transaction details on the receiver's wallet to ensure transaction completed properly.
+
+ ![alt text](step_6.jpg) 
+ ![alt text](step_7.jpg)
