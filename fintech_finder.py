@@ -80,9 +80,6 @@ from typing import Any, List
 # From `crypto_wallet.py import the functions generate_account, get_balance,
 #  and send_transaction
 import crypto_wallet
-crypto_wallet.generate_account()
-crypto_wallet.get_balance()
-crypto_wallet.send_transaction()
 
 ################################################################################
 # Fintech Finder Candidate Information
